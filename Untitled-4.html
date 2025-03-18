@@ -1,0 +1,112 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPA Offers | High-Converting Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- CPAGrip Content Locker Script -->
+    <script type="text/javascript" src="https://rockingfolders.com/show.php?l=0&u=859453&id=68658"></script>
+    
+    <!-- Additional Script (Replace with actual script URL or content) -->
+    <script type="text/javascript" src="https://rockingfolders.com/show.php?l=0&u=859453&id=67671"></script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: #f4f4f4;
+            min-height: 100vh; /* Ensures body takes full height */
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background: #0073e6;
+            color: #fff;
+            padding: 20px;
+        }
+        .email-input {
+            margin: 10px 0;
+            padding: 10px;
+            width: 80%;
+            max-width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        footer {
+            background: #080807;
+            color: #ef0a0a;
+            padding: 10px;
+            margin-top: auto; /* Ensures footer stays at the bottom */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Exclusive CPA Offers</h1>
+        <p>Earn Money Online with High-Paying Offers</p>
+    </header>
+    
+    <section class="offer-container">
+        <div class="offer-card">
+            <div id="toast" style="display:none; position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background-color:#330aed; color:white; padding:10px; border-radius:5px;">
+                Offer unlocked!
+            </div>
+            <h2>Get a $500 Gift Card!</h2>
+            <p>Sign up and complete a simple survey to claim your reward.</p>
+            <input type="email" class="email-input" id="email1" placeholder="Enter your email" required>
+            <a href="#" class="cta-button" data-offer="Get a $500 Gift Card!" onclick="validateEmail('email1', this)">Unlock Offer</a>
+        </div>
+        
+        <div class="offer-card">
+            <h2>Win a $500 Kohl's Gift Card!</h2>
+            <p>Enter your email and stand a chance to win.</p>
+            <input type="email" class="email-input" id="email2" placeholder="Enter your email" required>
+            <a href="#" class="cta-button" data-offer="Win a $500 Kohl's Gift Card!" onclick="validateEmail('email2', this)">Unlock Offer</a>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 CPA Offers. All rights reserved.</p>
+    </footer>
+    
+   <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.cta-button').forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+        });
+    });
+});
+
+function validateEmail(emailFieldId, button) {
+    const email = document.getElementById(emailFieldId).value;
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Improved regex
+    
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+    
+    // Store or send email here if needed
+    console.log("Email submitted: " + email);
+    
+    // Unlock the offer
+    unlockOffer(button.getAttribute('data-offer'));
+}
+
+function unlockOffer(offer) {
+    // Display the toast message
+    const toast = document.getElementById('toast');
+    toast.style.display = 'block';
+    
+    // Redirect to a confirmation page after the toast has been displayed
+    setTimeout(function() {
+        window.location.href = "confirmation.html"; // Example redirect
+    }, 8000); // Redirect after 8 seconds to allow for toast visibility
+}
+</script>
+</body>
+</html>
